@@ -6,9 +6,9 @@ const Main = () => {
         <main className={'my-20'}>
             <section className={'sm:w-full md:w-1/4 lg:w-1/6 xl:w-1/12 mx-auto'}>
                 <div className={'flex justify-center h-98'}>
-                    <Picture photoUrl={'/dama-karo.jpg'} className={'my-5 ml-5'}/>
-                    <Picture photoUrl={'/dama-pik.jpg'} className={'my-5 ml-5 mr-5'}/>
-                    <Picture photoUrl={'/dama-kier.jpg'} className={'my-5 mr-5'}/>
+                    <Picture photoUrl={'/dama-karo.png'} className={'my-5 ml-5'}/>
+                    <Picture photoUrl={'/dama-pik.png'} className={'my-5 ml-5 mr-5'}/>
+                    <Picture photoUrl={'/dama-kier.png'} className={'my-5 mr-5'}/>
                 </div>
                 <div className={'flex justify-center'}>
                     <Button>Start</Button>
