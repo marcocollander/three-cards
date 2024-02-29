@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Button = ({className='ml-5 my-10 bg-emerald-700 px-4 py-2 text-md tracking-widest text-white rounded-xl', children}:any) => {
+const Button = ({className='border-white border-[1px] ml-5 my-10 bg-emerald-700 px-4 py-1 text-md tracking-[2px] text-white rounded-[7px]', type='button' ,children}:any) => {
     return (
-        <button className={className}>
+        <button className={className} type={type}>
             {children}
         </button>
     );
