@@ -1,8 +1,9 @@
 import Picture from "@/app/components/Picture";
 import Button from "@/app/components/Button";
 import Link from "next/link";
+import {FC} from "react";
 
-const Home = () => {
+const Home: FC = () => {
     return (
         <main className={'my-8'}>
             <section className={'mx-auto flex flex-col items-center'}>
@@ -12,9 +13,9 @@ const Home = () => {
             </section>
             <section className={'mt-10 sm:w-full md:w-3/4 lg:w-1/2 xl:w-1/6 mx-auto'}>
                 <div className={'flex justify-center h-98'}>
-                    <Picture photoUrl={'/dama-karo.png'} className={'my-5 ml-5'}/>
-                    <Picture photoUrl={'/dama-pik.png'} className={'my-5 ml-5 mr-5'}/>
-                    <Picture photoUrl={'/dama-kier.png'} className={'my-5 mr-5'}/>
+                    <Picture photoUrl={'/dama-karo.png'} className={'my-5 ml-2'}/>
+                    <Picture photoUrl={'/dama-pik.png'} className={'my-5 ml-2 mr-2'}/>
+                    <Picture photoUrl={'/dama-kier.png'} className={'my-5 mr-2'}/>
                 </div>
                 <div className={'flex justify-center'}>
                     <Button>Start</Button>

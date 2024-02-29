@@ -1,19 +1,24 @@
-import React from 'react';
 import Image from "next/image";
+import {FC} from "react";
 
-const Picture = ({photoUrl, className}:any) => {
+interface IPicture {
+    photoUrl: string;
+    className: string;
+}
+
+const Picture: FC<IPicture> = ({photoUrl, className}) => {
     return (
         <Image
             className={className}
             src={photoUrl}
             alt='Picture card'
-            sizes='28vw'
+            sizes='30vw'
             style={{
                 width:'100%',
                 height: 'auto'
             }}
             width={150}
-            height={200}
+            height={400}
         />
     );
 };

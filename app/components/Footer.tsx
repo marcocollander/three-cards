@@ -1,4 +1,6 @@
-const Footer = () => {
+import {FC} from "react";
+
+const Footer:FC = () => {
     return (
         <footer className={'flex flex-col text-white items-center bg-green-900 py-3'}>
             <p>The game of three cards</p>
