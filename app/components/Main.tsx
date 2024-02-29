@@ -23,7 +23,7 @@ const Main = () => {
             </section>
 
             <section className="my-5 flex justify-center flex-col items-center">
-                <form className={"lg:w-1/2 flex-col flex  items-center"}>
+                <form className={"lg:w-1/2 flex-col flex  items-center text-xl lg:text-2xl"}>
                     <div className={'flex flex-col lg:w-1/2 items-center'}>
                         <label className={'mb-2'} htmlFor="numberOfHits">Ilość trafień: </label>
                         <input type="number" name="numberOfHits" id="numberOfHits"/>
