@@ -23,10 +23,10 @@ const Header: FC<IHeader> = ({active, onClick}) => {
                     className="rounded-full"
                 />
             </Link>
-            <h1 className={'text-white tracking-wider sm:text-xl md:text-2xl lx:text-3xl  uppercase'}>Gra w trzy
+            <h1 className={'text-white tracking-wider sm:text-xl md:text-2xl lx:text-3xl  uppercase mr-[10%]'}>Gra w trzy
                 karty</h1>
             <button
-                className="z-10 flex flex-col w-[30px] h-[35px] justify-evenly lg:hidden"
+                className="z-10 flex flex-col w-[30px] h-[35px] justify-evenly lg:hidden absolute top-[10px] right-[5px]"
                 onClick={onClick}
             >
                 <span className={clsx(classesSpan, active ? 'hidden' : 'block')}></span>
@@ -41,12 +41,13 @@ const Header: FC<IHeader> = ({active, onClick}) => {
                 ></span>
             </button>
             {active &&
-                <ul className={'absolute py-6 rounded-2xl text-center top-[25px] right-[10px] flex flex-col text-white w-1/2 bg-green-400'}>
-                    <Link onClick={onClick} href={'/'}>Gra</Link>
-                    <Link onClick={onClick} href={'/rules'}>Zasady gry</Link>
-                    <Link onClick={onClick} href={'/auth/login'}>Logowanie</Link>
-                    <Link onClick={onClick} href={'/auth/register'}>Rejestracja</Link>
-                    <Link onClick={onClick} href={'/profile'}>Profil</Link>
+                <ul className={'absolute py-6 rounded-2xl text-center top-0 right-0 flex flex-col' +
+                    ' text-white w-1/2 sm:w-1/3  bg-green-400 text-base sm:text-lg tracking-wide'}>
+                    <Link className={'mb-2'} onClick={onClick} href={'/'}>Gra</Link>
+                    <Link className={'mb-2'} onClick={onClick} href={'/rules'}>Zasady gry</Link>
+                    <Link className={'mb-2'} onClick={onClick} href={'/auth/login'}>Logowanie</Link>
+                    <Link className={'mb-2'} onClick={onClick} href={'/auth/register'}>Rejestracja</Link>
+                    <Link className={'mb-2'} onClick={onClick} href={'/profile'}>Profil</Link>
                 </ul>
             }
             <ul className={'hidden lg:flex justify-between text-white w-1/2'}>

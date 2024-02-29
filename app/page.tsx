@@ -8,7 +8,7 @@ const Home: FC = () => {
         <main className={'my-8'}>
             <section className={'mx-auto flex flex-col items-center'}>
                 <h2 className={'text-xl text-white'}>Witaj, wyniki tylko</h2>
-                <Link className={'text-white font-bold'} href="/auth/login">zalogowanych</Link>
+                <Link className={'text-white font-bold'} href="/auth/loqgin">zalogowanych</Link>
                 <p className={'text-white'}>użytkowników zostaną zapamiętane</p>
             </section>
             <section className={'mt-10 sm:w-full md:w-3/4 lg:w-1/2 xl:w-1/6 mx-auto'}>

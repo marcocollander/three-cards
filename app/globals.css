@@ -42,7 +42,7 @@
         transform: rotate(0deg);
     }
     to {
-        transform: rotate(-45deg) translateY(-5px) translateX(3px);
+        transform: rotate(-45deg) translateY(-6px) translateX(4px);
     }
 }
 
