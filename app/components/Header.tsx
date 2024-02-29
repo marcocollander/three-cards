@@ -23,7 +23,7 @@ const Header: FC<IHeader> = ({active, onClick}) => {
                     className="rounded-full"
                 />
             </Link>
-            <h1 className={'text-white tracking-wider sm:text-xl md:text-2xl lx:text-3xl  uppercase mr-[10%]'}>Gra w trzy
+            <h1 className={'text-white tracking-wider sm:text-xl md:text-2xl lx:text-3xl  uppercase mr-[15%]'}>Gra w trzy
                 karty</h1>
             <button
                 className="z-10 flex flex-col w-[30px] h-[35px] justify-evenly lg:hidden absolute top-[10px] right-[5px]"
