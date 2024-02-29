@@ -4,7 +4,7 @@ import Link from "next/link";
 import {FC} from "react";
 
 interface IHeader {
-    active: string;
+    active: boolean;
 
     onClick(): void;
 }
