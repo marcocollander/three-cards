@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from "next/link";
-import Button from "@/app/components/Button";
+import Button from "@/components/Button";
 
 const Login = () => {
     return (
