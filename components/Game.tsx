@@ -7,25 +7,23 @@ import Button from "@/components/Button";
 
 const Game: FC = () => {
     const [rotate, setRotate] = useState(false)
-    const [disabledBtn, setDisabledBtn] = useState(false)
-    const [disabledCardZero, setDisabledCardZero] = useState(false)
+    const [disabledBtnStart, setDisabledBtnStart] = useState(false)
+    const [disabledBtnReset, setDisabledBtnReset] = useState(true)
+
     const [cards, setCards] = useState(['/dama-karo.png', '/dama-pik.png', '/dama-kier.png'])
     const handleStart = () => {
         setRotate(prevState => !prevState)
-        setDisabledBtn(prevState => !prevState)
+        setDisabledBtnStart(prevState => !prevState)
+        setDisabledBtnReset(prevState => !prevState)
     }
 
     const handleReset = () => {
-
+        setRotate(prevState => !prevState)
+        setDisabledBtnStart(prevState => !prevState)
+        setDisabledBtnReset(prevState => !prevState)
     }
 
-    const handleClickCardZero = () => {
-        setDisabledBtn(prevState => !prevState)
-        setDisabledCardZero(prevState => !prevState)
-        // let random = Math.floor(Math.random())
-        // setRotate(prevState => !prevState)
-        // setCards(prevState => [prevState[random], prevState[random], prevState[random]])
-    }
+    const handleClickCardZero = () => {}
 
     const handleClickCardOne = () => {}
 
@@ -36,17 +34,17 @@ const Game: FC = () => {
             <div className={'flex justify-center h-98'}>
                 <Picture photoUrl={rotate ? '/back-card.png' : cards[0]}
                          className={clsx('my-5 ml- cursor-pointer', rotate ? 'rotate-card' : 'no-rotate-card')}
-                         onClick={handleClickCardZero} disabled={disabledCardZero}/>
+                         onClick={handleClickCardZero}/>
                 <Picture photoUrl={rotate ? '/back-card.png' : cards[1]}
                          className={clsx('my-5 ml-2 mr-2 cursor-pointer', rotate ? 'rotate-card' : 'no-rotate-card')}
-                         onClick={handleClickCardOne} disabled={false}/>
+                         onClick={handleClickCardOne}/>
                 <Picture photoUrl={rotate ? '/back-card.png' : cards[2]}
                          className={clsx('my-5 mr-2 cursor-pointer', rotate ? 'rotate-card' : 'no-rotate-card')}
-                         onClick={handleClickCardTwo} disabled={false}/>
+                         onClick={handleClickCardTwo}/>
             </div>
             <div className={'flex justify-center'}>
-                <Button onClick={handleStart} disabled={disabledBtn}>Start</Button>
-                <Button onClick={handleReset}>Reset</Button>
+                <Button onClick={handleStart} disabled={disabledBtnStart}>Start</Button>
+                <Button onClick={handleReset} disabled={disabledBtnReset}>Reset</Button>
             </div>
         </section>
     )
