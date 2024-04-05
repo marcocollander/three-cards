@@ -6,7 +6,7 @@ interface IButton {
     className: string;
     type: string;
     disabled: boolean;
-    onClick: Function;
+    onClick: any;
     children: React.ReactNode;
 }
 
