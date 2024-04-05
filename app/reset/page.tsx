@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from '@/components/Button';
 
 const Reset = () => {
     return (
@@ -8,7 +7,7 @@ const Reset = () => {
                 <h1>Zresetuj swoje hasło</h1>
                 <form action=''>
                     <input type='email' placeholder='Email' />
-                    <Button
+                    <button
                         disabled={false}
                         onClick={() => console.log('Resetowanie')}
                         type={'button'}
@@ -17,7 +16,7 @@ const Reset = () => {
                         }
                     >
                         Zresetuj swoje hasło
-                    </Button>
+                    </button>
                 </form>
             </section>
         </main>
