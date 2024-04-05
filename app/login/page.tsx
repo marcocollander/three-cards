@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Button from '@/components/Button';
 
 const Login = () => {
     return (
@@ -21,7 +20,7 @@ const Login = () => {
                     required
                     placeholder={'Password'}
                 />
-                <Button
+                <button
                     type='button'
                     className={
                         'border-white border-[1px] ml-5 my-10 px-4 py-1 text-md tracking-[2px] text-white rounded-[7px]'
@@ -30,7 +29,7 @@ const Login = () => {
                     onClick={() => console.log('Logowanie')}
                 >
                     Log
-                </Button>
+                </button>
             </form>
             <div>
                 <p>Zapomniałeś hasła</p>

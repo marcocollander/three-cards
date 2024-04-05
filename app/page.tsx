@@ -1,5 +1,3 @@
-'use client';
-
 import { FC } from 'react';
 import ResultsForm from '@/components/ResultsForm';
 import Game from '@/components/Game';

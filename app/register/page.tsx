@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Button from '@/components/Button';
 
 const Register = () => {
     return (
@@ -27,14 +26,14 @@ const Register = () => {
                     placeholder='Powtórz hasło'
                     required
                 />
-                <Button
+                <button
                     type={'button'}
                     disabled={false}
                     className='border-white border-[1px] ml-5 my-10 px-4 py-1 text-md tracking-[2px] text-white rounded-[7px]'
                     onClick={() => console.log('Rejestrowanie')}
                 >
                     Zarejestruj
-                </Button>
+                </button>
             </form>
         </section>
     );

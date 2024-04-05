@@ -3,7 +3,6 @@
 import { FC, useState } from 'react';
 import clsx from 'clsx';
 import Picture from '@/components/Picture';
-import Button from '@/components/Button';
 import numbers from '@/lib/functions/cardDrawing';
 
 const Game: FC = () => {
@@ -100,22 +99,22 @@ const Game: FC = () => {
                 />
             </div>
             <div className='flex justify-center'>
-                <Button
+                <button
                     onClick={handleStart}
                     disabled={disabledBtnStart}
                     className='border-white border-[1px] ml-5 my-10 px-4 py-1 text-md tracking-[2px] text-white rounded-[7px]'
                     type='button'
                 >
                     Start
-                </Button>
-                <Button
+                </button>
+                <button
                     onClick={handleReset}
                     disabled={disabledBtnReset}
                     className='border-white border-[1px] ml-5 my-10 px-4 py-1 text-md tracking-[2px] text-white rounded-[7px]'
                     type='button'
                 >
                     Reset
-                </Button>
+                </button>
             </div>
         </section>
     );

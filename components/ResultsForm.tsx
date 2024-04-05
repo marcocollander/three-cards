@@ -1,7 +1,6 @@
 'use client';
 
 import { FC, useState } from 'react';
-import Button from '@/components/Button';
 import { classButton } from '@/styles/const/const-styles';
 
 const ResultsForm: FC = () => {
@@ -22,14 +21,14 @@ const ResultsForm: FC = () => {
     return (
         <>
             <div className='flex justify-center flex-col items-center'>
-                <Button
+                <button
                     onClick={handleResults}
                     className='border-white border-[1px] ml-5 my-10 px-4 py-1 text-md tracking-[2px] text-white rounded-[7px]'
                     type={'button'}
                     disabled={false}
                 >
                     Pokaż wyniki
-                </Button>
+                </button>
             </div>
             {show && (
                 <section className='my-5 flex justify-center flex-col items-center'>
@@ -68,14 +67,14 @@ const ResultsForm: FC = () => {
                                 id='hitPercentage'
                             />
                         </div>
-                        <Button
+                        <button
                             className={classButton}
                             disabled={false}
                             type={'submit'}
                             onClick={handleSubmit}
                         >
                             Wynik wyślij na serwer
-                        </Button>
+                        </button>
                     </form>
                     <div>
                         <p>Hit message</p>
