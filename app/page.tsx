@@ -1,12 +1,12 @@
-import {FC} from "react";
-import ResultsForm from "@/components/ResultsForm";
-import Game from "@/components/Game";
+import { FC } from 'react';
+import ResultsForm from '@/components/ResultsForm';
+import Game from '@/components/Game';
 
 const Home: FC = () => {
     return (
         <main className={'my-8'}>
-            <Game/>
-            <ResultsForm/>
+            <Game />
+            <ResultsForm />
         </main>
     );
 };
