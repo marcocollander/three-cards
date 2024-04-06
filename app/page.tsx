@@ -4,7 +4,7 @@ import Game from '@/components/Game';
 
 const Home: FC = () => {
     return (
-        <main className={'my-8'}>
+        <main className='my-5'>
             <Game />
             <ResultsForm />
         </main>
