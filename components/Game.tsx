@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, createContext, useContext, useState } from 'react';
+import { FC, createContext, useState } from 'react';
 
 import Cards from '@/components/Cards';
 import ResultsForm from '@/components/ResultsForm';

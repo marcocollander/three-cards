@@ -1,6 +1,5 @@
 import { FC, useContext } from 'react';
 import { GameContext } from '@/components/Game';
-import { number } from 'prop-types';
 
 const ResultsForm: FC = () => {
     const handleSubmit = () => {};
