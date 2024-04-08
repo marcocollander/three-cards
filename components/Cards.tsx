@@ -40,6 +40,12 @@ const Cards: FC = () => {
     const handleClickCardZero = () => {
         setRotateCardZero(prevState => !prevState);
         setDisabledBtnStart(prevState => !prevState);
+        if (cards[0] === '/dama-pik.png') {
+            gameContext.setNumberOfHits(++gameContext.numberOfHits);
+            gameContext.setHitPercentage(
+                (gameContext.numberOfHits / gameContext.numberOfAttempts) * 100,
+            );
+        }
     };
 
     const handleClickCardOne = () => {
