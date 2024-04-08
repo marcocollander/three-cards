@@ -38,7 +38,7 @@ const ResultsForm: FC = () => {
                         Procent trafień:
                     </label>
                     <input
-                        value={hitPercentage.toFixed(2).toString()}
+                        value={hitPercentage.toFixed(2)}
                         type='number'
                         name='hitPercentage'
                         id='hitPercentage'

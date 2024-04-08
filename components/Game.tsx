@@ -21,17 +21,17 @@ let context: gameContext = {
     numberOfAttempts: 0,
     hitPercentage: 0,
     clickCounter: 0,
-    setNumberOfHits() {
-        ++this.numberOfHits;
+    setNumberOfHits(numberOfHits: number) {
+        this.numberOfHits = numberOfHits;
     },
-    setNumberOfAttempts() {
-        ++this.numberOfAttempts;
+    setNumberOfAttempts(numberOfAttempts: number) {
+        this.numberOfAttempts = numberOfAttempts;
     },
-    setHitPercentage() {
-        ++this.hitPercentage;
+    setHitPercentage(hitPercentage: number) {
+        this.hitPercentage = hitPercentage;
     },
-    setClickCounter() {
-        ++this.clickCounter;
+    setClickCounter(clickCounter: number) {
+        this.clickCounter = clickCounter;
     },
 };
 
