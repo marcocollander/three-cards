@@ -5,23 +5,50 @@ import { FC, createContext, useContext, useState } from 'react';
 import Cards from '@/components/Cards';
 import ResultsForm from '@/components/ResultsForm';
 
-export const GameContext = createContext({});
+interface gameContext {
+    numberOfAttempts: number;
+    numberOfHits: number;
+    clickCounter: number;
+    setNumberOfHits: Function;
+    setNumberOfAttempts: Function;
+    setClickCounter: Function;
+}
+
+let context: gameContext = {
+    numberOfHits: 0,
+    numberOfAttempts: 0,
+    clickCounter: 0,
+    setNumberOfHits() {
+        ++this.numberOfHits;
+    },
+    setNumberOfAttempts() {
+        ++this.numberOfAttempts;
+    },
+    setClickCounter() {
+        ++this.clickCounter;
+    },
+};
+
+export const GameContext = createContext(context);
 
 const Game: FC = () => {
-    const [numberOfAttempts, setNumberOfAttempts] = useState(0);
     const [numberOfHits, setNumberOfHits] = useState(0);
+    const [numberOfAttempts, setNumberOfAttempts] = useState(0);
     const [clickCounter, setClickCounter] = useState(0);
 
     return (
         <main className='my-5'>
             <GameContext.Provider
-                value={{ numberOfAttempts, numberOfHits, clickCounter }}
+                value={{
+                    numberOfHits,
+                    numberOfAttempts,
+                    clickCounter,
+                    setNumberOfHits,
+                    setNumberOfAttempts,
+                    setClickCounter,
+                }}
             >
-                <Cards
-                    onClick={() =>
-                        setNumberOfAttempts(prevState => prevState + 1)
-                    }
-                />
+                <Cards />
                 <ResultsForm />
             </GameContext.Provider>
         </main>

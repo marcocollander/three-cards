@@ -4,13 +4,8 @@ import { number } from 'prop-types';
 
 const ResultsForm: FC = () => {
     const handleSubmit = () => {};
+    const gameContext = useContext(GameContext);
 
-    const gameContext = {
-        numberOfAttempts: number,
-        numberOfHits: number,
-        clickCounter: number,
-        ...useContext(GameContext),
-    };
     return (
         <section className='my-4 flex justify-center flex-col items-center'>
             <form className='lg:w-1/2 flex-col flex  items-center text-md lg:text-xl'>
@@ -19,7 +14,7 @@ const ResultsForm: FC = () => {
                         Ilość trafień:
                     </label>
                     <input
-                        value={gameContext.numberOfHits.toString()}
+                        value={gameContext.numberOfHits}
                         type='number'
                         name='numberOfHits'
                         id='numberOfHits'
@@ -30,7 +25,7 @@ const ResultsForm: FC = () => {
                         Ilość prób:
                     </label>
                     <input
-                        value={gameContext.numberOfAttempts.toString()}
+                        value={gameContext.numberOfAttempts}
                         type='number'
                         name='numberOfAttempts'
                         id='numberOfAttempts'

@@ -5,10 +5,9 @@ import clsx from 'clsx';
 import Picture from '@/components/Picture';
 import numbers from '@/lib/functions/cardDrawing';
 import { GameContext } from '@/components/Game';
-import { number } from 'prop-types';
 
-// @ts-ignore
-const Cards: FC = ({ onClick }) => {
+const Cards: FC = () => {
+    const gameContext = useContext(GameContext);
     const picturesCard = ['/dama-karo.png', '/dama-pik.png', '/dama-kier.png'];
     const [rotateCardZero, setRotateCardZero] = useState(false);
     const [rotateCardOne, setRotateCardOne] = useState(false);
@@ -28,6 +27,8 @@ const Cards: FC = ({ onClick }) => {
             picturesCard[indexes[1]],
             picturesCard[indexes[2]],
         ]);
+
+        gameContext.setNumberOfAttempts(++gameContext.numberOfAttempts);
     };
 
     const handleReset = () => {
@@ -81,7 +82,7 @@ const Cards: FC = ({ onClick }) => {
             </div>
             <div className='flex justify-center mt-10'>
                 <button
-                    onClick={onClick}
+                    onClick={handleStart}
                     disabled={disabledBtnStart}
                     className='border-white border-[1px] px-4 py-1 text-md tracking-[2px] text-white rounded-[7px]'
                     type='button'
