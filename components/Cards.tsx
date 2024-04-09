@@ -4,7 +4,7 @@ import { FC, useContext, useState } from 'react';
 import clsx from 'clsx';
 import Picture from '@/components/Picture';
 import numbers from '@/lib/functions/cardDrawing';
-import { GameContext } from '@/components/Game';
+import { GameContext } from '@/components/GameProvider';
 
 const Cards: FC = () => {
     const gameContext = useContext(GameContext);
@@ -28,13 +28,9 @@ const Cards: FC = () => {
             picturesCard[indexes[2]],
         ]);
 
-        gameContext.setClickCounter((prevState: number) => prevState + 1);
-        gameContext.setNumberOfAttempts((prevState: number) => prevState + 1);
-        if (gameContext.numberOfAttempts !== 0) {
-            gameContext.setHitPercentage(
-                (gameContext.numberOfHits / gameContext.numberOfAttempts) * 100,
-            );
-        }
+        gameContext.changeClickCounter();
+        gameContext.changeHitPercentage();
+        gameContext.changeNumberOfAttempts();
     };
 
     const handleReset = () => {
@@ -46,39 +42,25 @@ const Cards: FC = () => {
     const handleClickCardZero = () => {
         setRotateCardZero(prevState => !prevState);
         setDisabledBtnStart(prevState => !prevState);
-        gameContext.setClickCounter((prevState: number) => prevState + 1);
-        if (cards[0] === '/dama-pik.png' && gameContext.clickCounter === 2) {
-            gameContext.setNumberOfHits((prevState: number) => prevState + 1);
-            gameContext.setHitPercentage(
-                (gameContext.numberOfHits / gameContext.numberOfAttempts) * 100,
-            );
-            gameContext.setClickCounter((gameContext.clickCounter = 0));
+        gameContext.changeClickCounter();
+        if (cards[0] === '/dama-pik.png') {
+            gameContext.changeNumberOfHits();
         }
     };
 
     const handleClickCardOne = () => {
         setRotateCardOne(prevState => !prevState);
         setDisabledBtnStart(prevState => !prevState);
-        gameContext.setClickCounter((prevState: number) => prevState + 1);
-        if (cards[1] === '/dama-pik.png' && gameContext.clickCounter === 2) {
-            gameContext.setNumberOfHits((prevState: number) => prevState + 1);
-            gameContext.setHitPercentage(
-                (gameContext.numberOfHits / gameContext.numberOfAttempts) * 100,
-            );
-            gameContext.setClickCounter((gameContext.clickCounter = 0));
+        if (cards[1] === '/dama-pik.png') {
+            gameContext.changeNumberOfHits();
         }
     };
 
     const handleClickCardTwo = () => {
         setRotateCardTwo(prevState => !prevState);
         setDisabledBtnStart(prevState => !prevState);
-        gameContext.setClickCounter((prevState: number) => prevState + 1);
-        if (cards[2] === '/dama-pik.png' && gameContext.clickCounter === 2) {
-            gameContext.setNumberOfHits((prevState: number) => prevState + 1);
-            gameContext.setHitPercentage(
-                (gameContext.numberOfHits / gameContext.numberOfAttempts) * 100,
-            );
-            gameContext.setClickCounter((gameContext.clickCounter = 0));
+        if (cards[2] === '/dama-pik.png') {
+            gameContext.changeNumberOfHits();
         }
     };
 

@@ -1,4 +1,4 @@
-const indexes = (): number[] => {
+const numbers = (): number[] => {
     let i: number = Math.floor(Math.random() * 3),
         j: number = 0,
         k: number = 0;
@@ -20,4 +20,4 @@ const indexes = (): number[] => {
     return [i, j, k];
 };
 
-export default indexes;
+export default numbers;

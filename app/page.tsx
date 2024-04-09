@@ -1,10 +1,15 @@
 import { FC } from 'react';
-import Game from '@/components/Game';
+import GameProvider from '@/components/GameProvider';
+import Cards from '@/components/Cards';
+import ResultsForm from '@/components/ResultsForm';
 
 const Home: FC = () => {
     return (
         <main className='my-5'>
-            <Game />
+            <GameProvider>
+                <Cards />
+                <ResultsForm />
+            </GameProvider>
         </main>
     );
 };

@@ -1,5 +1,7 @@
+'use client';
+
 import { FC, useContext } from 'react';
-import { GameContext } from '@/components/Game';
+import { GameContext } from '@/components/GameProvider';
 
 const ResultsForm: FC = () => {
     const handleSubmit = () => {};
