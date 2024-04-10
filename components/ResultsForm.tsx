@@ -6,9 +6,6 @@ import { GameContext } from '@/components/GameProvider';
 const ResultsForm: FC = () => {
     const handleSubmit = () => {};
     const gameContext = useContext(GameContext);
-    let numberOfHits = gameContext.numberOfHits;
-    let numberOfAttempts = gameContext.numberOfAttempts;
-    let hitPercentage = gameContext.hitPercentage;
 
     return (
         <section className='my-4 flex justify-center flex-col items-center'>
@@ -18,7 +15,8 @@ const ResultsForm: FC = () => {
                         Ilość trafień:
                     </label>
                     <input
-                        value={numberOfHits}
+                        onChange={e => e.target.value}
+                        value={gameContext.numberOfHits}
                         type='number'
                         name='numberOfHits'
                         id='numberOfHits'
@@ -29,7 +27,8 @@ const ResultsForm: FC = () => {
                         Ilość prób:
                     </label>
                     <input
-                        value={numberOfAttempts}
+                        onChange={e => e.target.value}
+                        value={gameContext.numberOfAttempts}
                         type='number'
                         name='numberOfAttempts'
                         id='numberOfAttempts'
@@ -40,7 +39,8 @@ const ResultsForm: FC = () => {
                         Procent trafień:
                     </label>
                     <input
-                        value={hitPercentage.toFixed(2)}
+                        onChange={e => e.target.value}
+                        value={gameContext.hitPercentage.toFixed(2)}
                         type='number'
                         name='hitPercentage'
                         id='hitPercentage'
@@ -56,7 +56,7 @@ const ResultsForm: FC = () => {
                 </button>
             </form>
             <div>
-                <p>Hit message</p>
+                <p></p>
             </div>
         </section>
     );

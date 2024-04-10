@@ -28,9 +28,9 @@ const Cards: FC = () => {
             picturesCard[indexes[2]],
         ]);
 
-        gameContext.changeClickCounter();
+        gameContext.changeNumberOfAttempts(10);
         gameContext.changeHitPercentage();
-        gameContext.changeNumberOfAttempts();
+        gameContext.changeClickCounter(0);
     };
 
     const handleReset = () => {
@@ -40,29 +40,39 @@ const Cards: FC = () => {
     };
 
     const handleClickCardZero = () => {
+        gameContext.changeClickCounter(1);
         setRotateCardZero(prevState => !prevState);
         setDisabledBtnStart(prevState => !prevState);
-        gameContext.changeClickCounter();
-        if (cards[0] === '/dama-pik.png') {
+        if (cards[0] === '/dama-pik.png' && gameContext.clickCounter === 0) {
             gameContext.changeNumberOfHits();
+            setRotateCardOne(prevState => !prevState);
+            setRotateCardTwo(prevState => !prevState);
         }
     };
 
     const handleClickCardOne = () => {
+        gameContext.changeClickCounter(1);
         setRotateCardOne(prevState => !prevState);
         setDisabledBtnStart(prevState => !prevState);
-        if (cards[1] === '/dama-pik.png') {
+        if (cards[1] === '/dama-pik.png' && gameContext.clickCounter === 0) {
             gameContext.changeNumberOfHits();
+            setRotateCardZero(prevState => !prevState);
+            setRotateCardTwo(prevState => !prevState);
         }
     };
 
     const handleClickCardTwo = () => {
+        gameContext.changeClickCounter(1);
         setRotateCardTwo(prevState => !prevState);
         setDisabledBtnStart(prevState => !prevState);
-        if (cards[2] === '/dama-pik.png') {
+        if (cards[2] === '/dama-pik.png' && gameContext.clickCounter === 0) {
             gameContext.changeNumberOfHits();
+            setRotateCardZero(prevState => !prevState);
+            setRotateCardOne(prevState => !prevState);
         }
     };
+
+    console.log(gameContext.clickCounter);
 
     return (
         <section className={'sm:w-full md:w-3/4 lg:w-1/2 xl:w-1/6 mx-auto'}>

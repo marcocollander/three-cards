@@ -8,9 +8,9 @@ export const GameContext = createContext({
     hitPercentage: 0,
     clickCounter: 0,
     changeNumberOfHits: () => {},
-    changeNumberOfAttempts: () => {},
+    changeNumberOfAttempts: (quantity: number) => {},
     changeHitPercentage: () => {},
-    changeClickCounter: () => {},
+    changeClickCounter: (quantity: number) => {},
 });
 
 const GameProvider = ({
@@ -25,8 +25,16 @@ const GameProvider = ({
         setNumerOfHits((prevState: number) => prevState + 1);
     };
 
-    const changeNumberOfAttempts = () => {
+    const changeNumberOfAttempts = (quantity: number) => {
         setNumberOfAttempts((prevState: number) => prevState + 1);
+        if (numberOfAttempts >= quantity) {
+            alert(
+                'Koniec gry. Jeśli jesteś zalogowany to Wyślij wynik na server',
+            );
+            setNumberOfAttempts(0);
+            setHitPercentage(0);
+            setNumerOfHits(0);
+        }
     };
 
     const changeHitPercentage = () => {
@@ -35,8 +43,8 @@ const GameProvider = ({
         } else setHitPercentage(0);
     };
 
-    const changeClickCounter = () => {
-        setClickCounter(prevState => prevState + 1);
+    const changeClickCounter = (quantity: number) => {
+        setClickCounter(quantity);
     };
 
     return (
