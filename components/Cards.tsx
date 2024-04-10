@@ -3,7 +3,7 @@
 import { FC, useContext, useState } from 'react';
 import clsx from 'clsx';
 import Picture from '@/components/Picture';
-import numbers from '@/lib/functions/cardDrawing';
+import numbers from '@/app/lib/functions/cardDrawing';
 import { GameContext } from '@/components/GameProvider';
 
 const Cards: FC = () => {
