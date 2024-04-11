@@ -15,6 +15,7 @@ const ResultsForm: FC = () => {
                         Ilość trafień:
                     </label>
                     <input
+                        className={'text-center'}
                         onChange={e => e.target.value}
                         value={gameContext.numberOfHits}
                         type='number'
@@ -27,6 +28,7 @@ const ResultsForm: FC = () => {
                         Ilość prób:
                     </label>
                     <input
+                        className={'text-center'}
                         onChange={e => e.target.value}
                         value={gameContext.numberOfAttempts}
                         type='number'
@@ -39,6 +41,7 @@ const ResultsForm: FC = () => {
                         Procent trafień:
                     </label>
                     <input
+                        className={'text-center'}
                         onChange={e => e.target.value}
                         value={gameContext.hitPercentage.toFixed(2)}
                         type='number'

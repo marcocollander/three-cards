@@ -14,7 +14,7 @@ const Header: FC = () => {
     };
 
     return (
-        <header className='flex justify-evenly  items-center   bg-green-900 py-4 '>
+        <header className='flex justify-evenly items-center bg-green-900 py-4 '>
             <Link href={'/'}>
                 <Image
                     src={'/logo.jpg'}
@@ -78,7 +78,7 @@ const Header: FC = () => {
                     <Link
                         className={'mb-2'}
                         onClick={handleClick}
-                        href={'/register'}
+                        href={'/signup'}
                     >
                         Rejestracja
                     </Link>
@@ -95,7 +95,7 @@ const Header: FC = () => {
                 <Link href={'/'}>Gra</Link>
                 <Link href={'/rules'}>Zasady gry</Link>
                 <Link href={'/login'}>Logowanie</Link>
-                <Link href={'/register'}>Rejestracja</Link>
+                <Link href={'/signup'}>Rejestracja</Link>
                 <Link href={'/profile'}>Profile</Link>
             </ul>
         </header>

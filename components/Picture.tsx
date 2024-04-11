@@ -21,7 +21,7 @@ const Picture: FC<IPicture> = ({ photoUrl, className, onClick }) => {
                 height: 'auto',
             }}
             width={100}
-            height={300}
+            height={200}
             onClick={onClick}
         />
     );
