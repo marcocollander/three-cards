@@ -8,6 +8,7 @@ export const authConfig = {
     },
     providers: [
         Credentials({
+            // @ts-ignore
             async authorize(credentials: Record<string, string>): Promise<any> {
                 const email = credentials?.email.toLowerCase();
                 const password = credentials?.password;
@@ -23,4 +24,14 @@ export const authConfig = {
             },
         }),
     ],
+    callbacks: {
+        // @ts-ignore
+        jwt({ token, trigger, session }) {
+            if (trigger === 'update' && session) {
+                token.name = session.name;
+                token.picture = session.image;
+            }
+            return token;
+        },
+    },
 };
