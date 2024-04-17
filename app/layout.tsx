@@ -22,12 +22,12 @@ export default function RootLayout({
     return (
         <html lang='en' className={'bg-green-800'}>
             <body className={inter.className}>
+                <Toaster position={'bottom-right'} />
                 <AuthProvider>
-                    <Toaster position={'bottom-right'} />
                     <Header />
                     {children}
-                    <Footer />
                 </AuthProvider>
+                <Footer />
             </body>
         </html>
     );
