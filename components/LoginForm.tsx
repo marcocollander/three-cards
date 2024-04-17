@@ -41,25 +41,27 @@ export default function LoginForm({ callbackUrl }: { callbackUrl: any }) {
                     className='input input-bordered w-full'
                     value={email}
                     onChange={e => setEmail(e.target.value)}
-                    placeholder='Enter your email address'
+                    placeholder='Wprowadź swój adres email'
                     required
                 />
             </div>
             <div className='space-y-2'>
                 <label className='label text-black' htmlFor='password'>
-                    Password
+                    Hasło
                 </label>
                 <input
                     type='password'
-                    id='email'
+                    id='password'
                     className='input input-bordered w-full'
                     value={password}
                     onChange={e => setPassword(e.target.value)}
-                    placeholder='Enter your password'
+                    placeholder='Wprowadź swoje hasło'
                     required
                 />
             </div>
-            <button className='btn btn-primary btn-block mt-4'>Log In</button>
+            <button className='btn btn-primary btn-block mt-4'>
+                Zaloguj się
+            </button>
         </form>
     );
 }

@@ -72,8 +72,6 @@ const Cards: FC = () => {
         }
     };
 
-    console.log(gameContext.clickCounter);
-
     return (
         <section className={'sm:w-full md:w-3/4 lg:w-1/2 xl:w-1/6 mx-auto'}>
             <div className='flex justify-center'>

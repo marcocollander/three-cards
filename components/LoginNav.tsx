@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { signOut } from 'next-auth/react';
 
 // @ts-ignore
-export default function LoginNav({ onClick }) {
+export default function LoginNav() {
     const { status, data: session } = useSession();
 
     return (
@@ -30,9 +30,7 @@ export default function LoginNav({ onClick }) {
                         className='mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52'
                     >
                         <li>
-                            <Link href='/profile' onClick={onClick}>
-                                Profile
-                            </Link>
+                            <Link href='/profile'>Profile</Link>
                         </li>
                         <li>
                             {/*@ts-ignore*/}
@@ -46,9 +44,7 @@ export default function LoginNav({ onClick }) {
             {status === 'unauthenticated' && (
                 <div className='menu-horizontal'>
                     <li className={'mr-3'}>
-                        <Link onClick={onClick} href='/login'>
-                            Login
-                        </Link>
+                        <Link href='/login'>Login</Link>
                     </li>
                     <li>
                         <Link href='/signup'>Sign Up</Link>

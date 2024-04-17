@@ -69,13 +69,13 @@ const Header: FC = () => {
                     >
                         Zasady gry
                     </Link>
-                    <LoginNav onClick={handleClick} />
+                    <LoginNav />
                 </ul>
             )}
             <ul className={'hidden lg:flex justify-between text-white w-1/2'}>
                 <Link href={'/'}>Gra</Link>
                 <Link href={'/rules'}>Zasady gry</Link>
-                <LoginNav onClick={handleClick} />
+                <LoginNav />
             </ul>
         </header>
     );
