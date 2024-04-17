@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { toast } from 'react-hot-toast';
 
-export default function LoginForm({ callbackUrl }) {
+export default function LoginForm({ callbackUrl }: { callbackUrl: any }) {
     const router = useRouter();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -18,14 +18,14 @@ export default function LoginForm({ callbackUrl }) {
             redirect: false,
         });
 
-        if (res.status === 200) {
+        if (res?.status === 200) {
             toast.success('Login Successful');
-            await router.push(callbackUrl ?? '/profile');
+            router.push(callbackUrl ?? '/profile');
         } else {
-            if (res.error === 'CredentialsSignin') {
+            if (res?.error === 'CredentialsSignin') {
                 res.error = 'Wrong Password';
             }
-            toast.error(`Login Failed: ${res.error}`);
+            toast.error(`Login Failed: ${res?.error}`);
         }
     };
 

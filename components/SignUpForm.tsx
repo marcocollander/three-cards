@@ -4,9 +4,10 @@ import { useState } from 'react';
 import { createUser } from '@/lib/actions/user.action';
 import toast from 'react-hot-toast';
 import { signIn } from 'next-auth/react';
-import { router } from 'next/client';
+import { useRouter } from 'next/navigation';
 
 export default function SignUpForm() {
+    const router = useRouter();
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
@@ -21,15 +22,14 @@ export default function SignUpForm() {
             });
 
             if (user) {
-                const res = await signIn('credentials'), {
+                const res = await signIn('credentials', {
                     email,
                     password,
                     redirect: false,
                 });
-                if(res.status === 200){
-                toast.success('Rejestracja zakończona sukcesem');
-                router.push('/profile')
-
+                if (res?.status === 200) {
+                    toast.success('Rejestracja zakończona sukcesem');
+                    router.push('/profile');
                 }
             }
         } catch (error) {

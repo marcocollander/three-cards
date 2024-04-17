@@ -4,6 +4,7 @@ import Image from 'next/image';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { FC, useState } from 'react';
+import LoginNav from '@/components/LoginNav';
 
 const Header: FC = () => {
     const classesSpan: string = 'bg-white w-[25px] h-[2px]';
@@ -54,7 +55,7 @@ const Header: FC = () => {
             {active && (
                 <ul
                     className={
-                        'absolute py-6 rounded-2xl text-center top-0 right-0 flex flex-col' +
+                        'absolute py-6 rounded-2xl top-0 right-0 flex flex-col items-center' +
                         ' text-white w-1/2 sm:w-1/3  bg-green-400 text-base sm:text-lg tracking-wide z-10'
                     }
                 >
@@ -68,35 +69,13 @@ const Header: FC = () => {
                     >
                         Zasady gry
                     </Link>
-                    <Link
-                        className={'mb-2'}
-                        onClick={handleClick}
-                        href={'/login'}
-                    >
-                        Logowanie
-                    </Link>
-                    <Link
-                        className={'mb-2'}
-                        onClick={handleClick}
-                        href={'/signup'}
-                    >
-                        Rejestracja
-                    </Link>
-                    <Link
-                        className={'mb-2'}
-                        onClick={handleClick}
-                        href={'/profile'}
-                    >
-                        Profile
-                    </Link>
+                    <LoginNav onClick={handleClick} />
                 </ul>
             )}
             <ul className={'hidden lg:flex justify-between text-white w-1/2'}>
                 <Link href={'/'}>Gra</Link>
                 <Link href={'/rules'}>Zasady gry</Link>
-                <Link href={'/login'}>Logowanie</Link>
-                <Link href={'/signup'}>Rejestracja</Link>
-                <Link href={'/profile'}>Profile</Link>
+                <LoginNav onClick={handleClick} />
             </ul>
         </header>
     );

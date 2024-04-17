@@ -3,6 +3,8 @@
 import { dbConnect } from '@/lib/dbConnect';
 import User from '@/lib/models/user.model';
 import bcrypt from 'bcrypt';
+import { UpdateQuery } from 'mongoose';
+import { revalidatePath } from 'next/cache';
 
 export async function createUser(user: {
     password: string;
@@ -26,4 +28,22 @@ export async function getUserByEmail(userEmail: string) {
 
     if (!user) throw new Error('User Not Found');
     return JSON.parse(JSON.stringify(user));
+}
+
+export async function updateUser(
+    userId: any,
+    user: UpdateQuery<any> | undefined,
+) {
+    await dbConnect();
+
+    const updatedUser = await User.findByIdAndUpdate(
+        userId,
+        { ...user },
+        { new: true },
+    );
+
+    if (!updatedUser) throw new Error('User Update Failed');
+
+    revalidatePath('/profile');
+    return JSON.parse(JSON.stringify(updatedUser));
 }
