@@ -75,7 +75,7 @@ export default function UserForm({ user }) {
                 />
                 {errors.name?.type === 'required' && (
                     <p role='alert' className='text-red-600 text-sm pt-2'>
-                        Name is required
+                        Imię jest wymagane
                     </p>
                 )}
             </div>

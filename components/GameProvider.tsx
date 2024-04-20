@@ -8,9 +8,9 @@ export const GameContext = createContext({
     hitPercentage: 0,
     clickCounter: 0,
     changeNumberOfHits: () => {},
-    changeNumberOfAttempts: (quantity: number) => {},
+    changeNumberOfAttempts: (_quantity: number) => {},
     changeHitPercentage: () => {},
-    changeClickCounter: (quantity: number) => {},
+    changeClickCounter: (_quantity: number) => {},
 });
 
 const GameProvider = ({
@@ -28,9 +28,7 @@ const GameProvider = ({
     const changeNumberOfAttempts = (quantity: number) => {
         setNumberOfAttempts((prevState: number) => prevState + 1);
         if (numberOfAttempts >= quantity) {
-            alert(
-                'Koniec gry. Jeśli jesteś zalogowany to Wyślij wynik na server',
-            );
+            alert('Koniec gry. Wyślij wynik na serwer.');
             setNumberOfAttempts(0);
             setHitPercentage(0);
             setNumerOfHits(0);

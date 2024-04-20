@@ -33,9 +33,7 @@ export default function SignUpForm() {
                 }
             }
         } catch (error) {
-            toast.error(
-                'Rejestracja się nie powiodła się: Ten email jest już zarejestrowany',
-            );
+            toast.error('Ten email jest już prawdopodobnie zarejestrowany.');
         }
     };
 

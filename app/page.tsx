@@ -12,7 +12,7 @@ const Home: FC = async () => {
     try {
         connection = await dbConnect();
         if (connection !== null) {
-            console.log('Połączono się z bazą danych');
+            console.log('Połączono się z bazą danych.');
         }
     } catch (error) {
         console.log(error);

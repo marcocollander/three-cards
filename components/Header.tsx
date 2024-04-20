@@ -27,7 +27,7 @@ const Header: FC = () => {
             </Link>
             <h1
                 className={
-                    'text-white tracking-wider sm:text-sm md:text-xl lx:text-2xl  uppercase mr-[15%]'
+                    'text-white tracking-wider sm:text-sm md:text-xl lx:text-2xl uppercase mr-[15%]'
                 }
             >
                 Gra w trzy karty
