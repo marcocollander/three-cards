@@ -30,9 +30,9 @@ export default function LoginForm({ callbackUrl }: { callbackUrl: any }) {
     };
 
     return (
-        <form onSubmit={handleSubmit} className={'flex-1 space-y-6'}>
+        <form onSubmit={handleSubmit} className='flex-1 space-y-6 bg-green-500'>
             <div className='space-y-2'>
-                <label className='label text-black' htmlFor='email'>
+                <label className='label text-white' htmlFor='email'>
                     Email
                 </label>
                 <input
@@ -46,7 +46,7 @@ export default function LoginForm({ callbackUrl }: { callbackUrl: any }) {
                 />
             </div>
             <div className='space-y-2'>
-                <label className='label text-black' htmlFor='password'>
+                <label className='label text-white' htmlFor='password'>
                     Hasło
                 </label>
                 <input
@@ -59,7 +59,7 @@ export default function LoginForm({ callbackUrl }: { callbackUrl: any }) {
                     required
                 />
             </div>
-            <button className='btn btn-primary btn-block mt-4'>
+            <button className='btn btn-primary btn-block mt-4 text-white text-lg font-normal tracking-wider'>
                 Zaloguj się
             </button>
         </form>

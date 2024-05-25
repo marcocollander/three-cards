@@ -9,9 +9,9 @@ export default async function Login({ searchParams }: any) {
         redirect('/profile');
     }
     return (
-        <div className='mt-12 mx-auto w-full max-w-[400px] p-4 bg-slate-100'>
+        <div className='mt-12 mx-auto w-full max-w-[400px] p-4 bg-green-500'>
             <div className='space-y-2 text-center mb-6 text-black'>
-                <h1 className='text-3xl font-bold'>Zaloguj się</h1>
+                <h1 className='text-3xl font-normal text-white'>Zaloguj się</h1>
             </div>
             <LoginForm callbackUrl={searchParams?.callbackUrl} />
         </div>
