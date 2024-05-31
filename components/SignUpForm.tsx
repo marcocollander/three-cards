@@ -66,7 +66,7 @@ export default function SignUpForm() {
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                     type='email'
-                    placeholder='Enter your email address'
+                    placeholder='Wprowadź swój adres email'
                     required
                 />
             </div>
@@ -80,7 +80,7 @@ export default function SignUpForm() {
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                     type='password'
-                    placeholder='Wprowadz hasło'
+                    placeholder='Wprowadź hasło'
                     required
                     minLength={6}
                 />
